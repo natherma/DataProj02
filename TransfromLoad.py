@@ -1,6 +1,7 @@
 import pandas as pd
 from sqlalchemy import create_engine
 
+
 jobs_df = pd.read_csv('linkedin_jobs.csv')
 
 big4 = ['Deloitte', 'EY', 'PwC', 'KPMG']
@@ -15,9 +16,7 @@ jobs_df['company_category'] = jobs_df['company'].apply(
     else 'Other'
 )
 
-
 DATABASE_URL = "postgresql+psycopg2://postgres:12345678@localhost:5432/practice"
-
 engine = create_engine(DATABASE_URL)
 
 # Load data
